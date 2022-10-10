@@ -2,7 +2,7 @@ const container = document.querySelector('#container');
 const body = document.querySelector('body')
 const content = document.createElement('div');
 content.classList.add('content');
-
+let colorarray = ['red', 'orange', 'yellow','green','blue','violet'];
 
 body.appendChild(content);
 
@@ -31,12 +31,18 @@ for ( let i = 0; i < column; i++) {
     
     gridbox.style.height = pxsize + 'px';
     gridbox.style.width = pxsize + 'px';
-    cont1.appendChild(gridbox);
     
-    gridbox.addEventListener('mouseover',(event) => {
-        gridbox.style.backgroundColor = 'red'
-    });
+    
+    gridbox.addEventListener('mouseover', changecolor)
+    gridbox.addEventListener('mousedown', changecolor) 
+    cont1.appendChild(gridbox);   
     }
+}
+function changecolor(e){
+    
+   e.target.style.backgroundColor = "rgb(" + getrgb() + ", "+ getrgb()+", " +getrgb()+ ")"; 
+   
+
 }
 function makerow(column){
 makebox(column)
@@ -46,21 +52,23 @@ for (let i = 1; i < column; i++) {
 }
 }
 makerow(16)
-const buttons = document.querySelectorAll('button');
+//button to set gridbox size
+const buttons = document.querySelector('#btn1');
 
-// we use the .forEach method to iterate through each button
-buttons.forEach((button) => {
-
-  // and for each one we add a 'click' listener
-  button.addEventListener('click', () => {
+buttons.addEventListener('click', () => {
    removeAllChildNodes(content);
     promptme();
   });
-});
+
+
 
 function promptme(){
 
 let boxamount = prompt('size of grid');
+if ( boxamount > 100){
+    alert('enter a number less than 100')
+    return 
+}
 makerow(boxamount);
 
 
@@ -75,5 +83,8 @@ function removeAllChildNodes(parent) {
 }
 
 
+function getrgb() {
 
-
+    let rnum = Math.random() * (255- 0) + 0;
+    return Math.round(rnum)
+  }
