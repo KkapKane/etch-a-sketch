@@ -1,0 +1,31 @@
+body {
+    display: flex;
+   
+}
+
+
+#container {
+    
+    
+    flex-direction: column;
+    display: flex;
+   
+    
+   
+}
+
+divv {
+    display: flex;
+     
+    gap: 5px;
+    
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    height: 40px;
+    width: 40px;
+}
+
+.content {
+    background-color: red;
+}
