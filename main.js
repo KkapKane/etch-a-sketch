@@ -28,7 +28,7 @@ for ( let i = 0; i < column; i++) {
     const cont1 = document.querySelector('.container' + i);
     const gridbox = document.createElement('divv');
     gridbox.classList.add('gridbox');
-    gridbox.textContent = i + 1
+    
     gridbox.style.height = pxsize + 'px';
     gridbox.style.width = pxsize + 'px';
     cont1.appendChild(gridbox);
@@ -46,4 +46,34 @@ for (let i = 1; i < column; i++) {
 }
 }
 makerow(16)
+const buttons = document.querySelectorAll('button');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', () => {
+   removeAllChildNodes(content);
+    promptme();
+  });
+});
+
+function promptme(){
+
+let boxamount = prompt('size of grid');
+makerow(boxamount);
+
+
+}
+
+
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+
+
 
