@@ -34,13 +34,19 @@ for ( let i = 0; i < column; i++) {
     
     
     gridbox.addEventListener('mouseover', changecolor)
-    gridbox.addEventListener('mousedown', changecolor) 
+    gridbox.addEventListener('mousedown', blackcolor) 
     cont1.appendChild(gridbox);   
     }
 }
+function blackcolor(e){
+    
+    let black = e.target.style.backgroundColor = "black"; 
+    
+ 
+ }
 function changecolor(e){
     
-   e.target.style.backgroundColor = "rgb(" + getrgb() + ", "+ getrgb()+", " +getrgb()+ ")"; 
+   let rainbow = e.target.style.backgroundColor = "rgb(" + getrgb() + ", "+ getrgb()+", " +getrgb()+ ")"; 
    
 
 }
@@ -62,16 +68,24 @@ buttons.addEventListener('click', () => {
 
 
 
+var curbox;
+console.log(curbox)
 function promptme(){
+    
 
-let boxamount = prompt('size of grid');
+var boxamount = prompt('size of grid');
+
 if ( boxamount > 100){
     alert('enter a number less than 100')
-    return 
+    makerow(16);
+    return;
+    
+    
 }
+curbox = boxamount;
 makerow(boxamount);
-
-
+console.log(curbox)
+return curbox;
 }
 
 
@@ -88,3 +102,18 @@ function getrgb() {
     let rnum = Math.random() * (255- 0) + 0;
     return Math.round(rnum)
   }
+
+const button2 = document.querySelector('#btn2');
+
+button2.addEventListener('click', () => {
+    if (curbox === undefined){
+        removeAllChildNodes(content);
+        makerow(16)
+    }
+    else
+    removeAllChildNodes(content);
+    makerow(curbox)
+    
+  });
+
+

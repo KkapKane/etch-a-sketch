@@ -1,9 +1,10 @@
 body {
+    gap: 8px;
     display: flex;
     margin: 50px;
     justify-content: center;
     align-items: center;
-   
+   flex-direction: column;
 }
 
 divv {
@@ -26,3 +27,7 @@ divv {
     
 }
 
+button {
+    gap: 8px;
+    font-size: 30px;
+}
