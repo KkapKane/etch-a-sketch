@@ -1,16 +1,8 @@
 body {
     display: flex;
-   
-}
-
-
-#container {
-    
-    
-    flex-direction: column;
-    display: flex;
-   
-    
+    margin: 50px;
+    justify-content: center;
+    align-items: center;
    
 }
 
@@ -22,10 +14,14 @@ divv {
     justify-content: space-between;
     flex-wrap: wrap;
     border: 1px solid black;
-    height: 40px;
-    width: 40px;
+    
 }
 
 .content {
-    background-color: red;
+    width: 480x;
+    height: 480px;
+    display: flex;
+    
+    
+    
 }
