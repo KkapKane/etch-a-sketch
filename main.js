@@ -5,7 +5,10 @@ content.classList.add('content');
 const button3 = document.querySelector('#btn3');
 let click = false;
 let color = 'black'
-
+var customcolor = document.getElementById('colorpicker');
+customcolor.addEventListener('input', () => {
+    color = customcolor.value
+})
 
 // Slider listener
 var slider = document.getElementById("range");

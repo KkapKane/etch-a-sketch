@@ -1,21 +1,19 @@
 body {
     margin: 200px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    min-height: 100vh;
     align-items: center;
-    flex-direction: column;
+    
+  
     
 }
 
-.middle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 
 divv {
     display: flex;
+    
 
 }
 
@@ -24,7 +22,7 @@ divv {
     height: 480px;
     display: flex;
     flex: 0 0 0;
-    
+    border-radius: 6px;
     outline: 2px solid black;
     
 }
@@ -32,11 +30,11 @@ divv {
     display: flex;
     flex-direction: column;
 
-    gap: 8px;
+    gap: 20px;
 }
- #container {
+
+#container {
     display: flex;
-    
-    justify-content: center;
-    margin: 10px;
- }
+    flex-direction: column;
+}
+
