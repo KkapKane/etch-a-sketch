@@ -6,6 +6,26 @@ const button3 = document.querySelector('#btn3');
 let click = false;
 let color = 'black'
 
+
+// Slider listener
+var slider = document.getElementById("range");
+var output = document.getElementById("value");
+var outputVarNo = document.getElementById("outputVar");
+output.textContent = slider.value;
+let update = () => output.innerHTML = slider.value;
+slider.addEventListener('input', () => {
+    output.textContent = slider.value;
+    
+   });
+slider.addEventListener('change', () => {
+    removeAllChildNodes(content);
+    makerow(slider.value)
+    
+   });
+ 
+
+
+
 body.appendChild(content);
 
 let height = window.innerWidth;
@@ -49,7 +69,7 @@ for (let i = 1; i < column; i++) {
   
 }
 }
-makerow(16)
+makerow(slider.value)
 //button to set gridbox size
 const buttons = document.querySelector('#btn1');
 
@@ -61,11 +81,11 @@ buttons.addEventListener('click', () => {
 
 
 var curbox;
-console.log(curbox)
+
 function promptme(){
     
 
-var boxamount = prompt('size of grid');
+var boxamount = slider.value;
 
 if ( boxamount > 100){
     alert('enter a number less than 100')
@@ -81,20 +101,21 @@ return curbox;
 }
 
 
-
+// removes all gridboxes
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
 
-
+// generates random number between 0-255 and set rgb to that
 function getrgb() {
 
     let rnum = Math.random() * (255- 0) + 0;
     return Math.round(rnum)
   }
 
+  //reset button to clear board
 const button2 = document.querySelector('#btn2');
 
 button2.addEventListener('click', () => {
@@ -107,19 +128,28 @@ button2.addEventListener('click', () => {
     makerow(curbox)
     
   });
+
+  //sets the color of grid depending on condition
 function colorSquare (){
     if(click) {
     if((color == "random")){
         this.style.backgroundColor = "rgb(" + getrgb() + ", "+ getrgb()+", " +getrgb()+ ")";
     }
+    else if((color =="black")){
+        this.style.backgroundColor = "black"
+    }
+    else if((color == "colorpicker")){
+    var colorchose = document.getElementById("colorpicker").value;
+    this.style.backgroundColor = colorchose;}
     else
     this.style.backgroundColor = color;
 }
 }
+
 function changecolor (choice){
     color = choice;
 } 
-
+// mouse up sets click to false
 document.querySelector('body').addEventListener('mouseup', (e) =>{
     click = false;
     document.querySelector('.mode').textContent = "mode: not coloring"
@@ -138,4 +168,5 @@ document.querySelector('body').addEventListener('mousedown', (e) =>{
 
 
 });
+
 

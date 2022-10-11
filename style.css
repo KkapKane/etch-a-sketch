@@ -1,20 +1,22 @@
 body {
-    gap: 8px;
+    margin: 200px;
     display: flex;
-    margin: 50px;
     justify-content: center;
     align-items: center;
-   flex-direction: column;
+    flex-direction: column;
+    
 }
+
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 divv {
     display: flex;
-     
-    
-    
-   
-    
-    
+
 }
 
 .content {
@@ -23,18 +25,18 @@ divv {
     display: flex;
     flex: 0 0 0;
     
-   
     outline: 2px solid black;
     
 }
-.buttoncontainer{
-    font-family: monospace;
+.buttoncontainer {
     display: flex;
-    gap: 8px;
-}
-button {
-    display:flex;
     flex-direction: column;
+
     gap: 8px;
-    font-size: 30px;
 }
+ #container {
+    display: flex;
+    
+    justify-content: center;
+    margin: 10px;
+ }

@@ -8,19 +8,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid</title>
 </head>
+    
 <body ondragstart="return false;" ondrop="return false;">
-    <div class="mode">mode: not coloring</div>
-    <div class="buttoncontainer">
-    <button id="btn1">Grid size</button>
-    <button id="btn2">Clear</button>
-    <button id="btn3" onclick="changecolor('black')">black</button>
-    <button id="btn4" onclick ="changecolor('random')">random</button>
-    <button id="btn5" onclick ="changecolor('white')">Erase</button> 
-    </div> 
+   
+    <div class="header">header</div>
+
+
+    <div class="middle">
+    
+    
     <div id="container">
+        
+<div class="buttoncontainer">
+        
+        <input type="range" min="1" max="100" value="16" class="slider" id="range">
+        Value: <span id="value"></span>
+        Value: <span id="outputVar"></span>
+        <label for="colorpicker">Color Picker:</label>
+        <input type="color" id="colorpicker" value="#0000ff">
+        <div class="mode">mode: not coloring</div>
     
     
     
+        <button id="btn1">Grid size</button>
+        <button id="btn2">Clear</button>
+        <button id="btn3" onclick="changecolor('black')">black</button>
+        <button id="btn4" onclick ="changecolor('random')">random</button>
+        <button id="btn5" onclick ="changecolor('colorpicker')">Set color to color picker</button> 
+        <button id="btn5" onclick ="changecolor('white')">Eraser</button> 
     </div>
+
+
+    </div>
+</div>
+
+
+    
 </body>
 </html>
