@@ -3,7 +3,7 @@ const body = document.querySelector('body')
 const content = document.createElement('div');
 content.classList.add('content');
 const button3 = document.querySelector('#btn3');
-let click = true;
+let click = false;
 let color = 'black'
 
 body.appendChild(content);
@@ -40,6 +40,7 @@ for ( let i = 0; i < column; i++) {
     cont1.appendChild(gridbox);   
     }
 }
+
 //function that makes all the rows
  function makerow(column){
 makebox(column)
@@ -117,15 +118,24 @@ function colorSquare (){
 }
 function changecolor (choice){
     color = choice;
-}
-document.querySelector('body').addEventListener('click', (e) =>{
+} 
+
+document.querySelector('body').addEventListener('mouseup', (e) =>{
+    click = false;
+    document.querySelector('.mode').textContent = "mode: not coloring"
+});
+document.querySelector('body').addEventListener('mousedown', (e) =>{
   if (e.target.tagname != "BUTTON"){
-    click = !click;
+    click = true;
     if(click){
-        document.querySelector('.mode').textContent = "mode: coloring"
+        document.querySelector('.mode').textContent = color
     }else {
-            document.querySelector('.mode').textContent = "mode: not coloring"
+            document.querySelector('.mode').textContent = color
         
     }
   }
+  
+
+
 });
+
