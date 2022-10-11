@@ -10,11 +10,10 @@ body {
 divv {
     display: flex;
      
-    gap: 5px;
     
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border: 1px solid black;
+    
+   
+    
     
 }
 
@@ -22,8 +21,10 @@ divv {
     width: 480x;
     height: 480px;
     display: flex;
+    flex: 0 0 0;
     
-    
+   
+    outline: 2px solid black;
     
 }
 

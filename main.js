@@ -2,7 +2,9 @@ const container = document.querySelector('#container');
 const body = document.querySelector('body')
 const content = document.createElement('div');
 content.classList.add('content');
-let colorarray = ['red', 'orange', 'yellow','green','blue','violet'];
+const button3 = document.querySelector('#btn3');
+let click = true;
+let color = 'black'
 
 body.appendChild(content);
 
@@ -31,26 +33,15 @@ for ( let i = 0; i < column; i++) {
     
     gridbox.style.height = pxsize + 'px';
     gridbox.style.width = pxsize + 'px';
+   
+    gridbox.addEventListener('mouseover', colorSquare)
     
-    
-    gridbox.addEventListener('mouseover', changecolor)
-    gridbox.addEventListener('mousedown', blackcolor) 
+   
     cont1.appendChild(gridbox);   
     }
 }
-function blackcolor(e){
-    
-    let black = e.target.style.backgroundColor = "black"; 
-    
- 
- }
-function changecolor(e){
-    
-   let rainbow = e.target.style.backgroundColor = "rgb(" + getrgb() + ", "+ getrgb()+", " +getrgb()+ ")"; 
-   
-
-}
-function makerow(column){
+//function that makes all the rows
+ function makerow(column){
 makebox(column)
 for (let i = 1; i < column; i++) {
   makebox(column)
@@ -115,5 +106,26 @@ button2.addEventListener('click', () => {
     makerow(curbox)
     
   });
-
-
+function colorSquare (){
+    if(click) {
+    if((color == "random")){
+        this.style.backgroundColor = "rgb(" + getrgb() + ", "+ getrgb()+", " +getrgb()+ ")";
+    }
+    else
+    this.style.backgroundColor = color;
+}
+}
+function changecolor (choice){
+    color = choice;
+}
+document.querySelector('body').addEventListener('click', (e) =>{
+  if (e.target.tagname != "BUTTON"){
+    click = !click;
+    if(click){
+        document.querySelector('.mode').textContent = "mode: coloring"
+    }else {
+            document.querySelector('.mode').textContent = "mode: not coloring"
+        
+    }
+  }
+});
