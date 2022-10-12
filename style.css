@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
 body {
-    margin: 200px;
-    display: flex;
-    justify-content: space-evenly;
-    min-height: 100vh;
-    align-items: center;
+display: flex;
+  
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin: 100px;
+gap:50px;
+background-color: #1d1f20;   
+color: white;    
     
   
     
@@ -22,19 +27,150 @@ divv {
     height: 480px;
     display: flex;
     flex: 0 0 0;
-    border-radius: 6px;
-    outline: 2px solid black;
+    border-radius: var(--borderWidth);
+    border: 10px solid rgba(0, 0, 0, 0.82);
+    background-color: white;
+    --borderWidth: 6px;
+  
     
 }
+#btn2{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #a166ab;
+    background-image:  url(images/Orion_bin.png);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #1d1f20;
+    color: #a166ab;
+    vertical-align: middle;
+    
+    padding: 20px 5px;
+
+}
+#btn2:hover,
+#btn2:focus{
+    box-shadow: 0px 2px 10px 0px #a166ab;
+    transform: ;
+}
+#btn5{
+
+    border: 2px solid #5073b8;
+    background: none;
+    background-image:  url(images/Orion_eraser.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    padding: 20px 5px;
+    color: #5073b8;
+
+}
+#btn5:hover,
+#btn5:focus{
+    box-shadow: 0px 2px 10px 0px #5073b8;
+    transform: ;
+}
+
+#btn4 {
+    font-size: 20px;
+    color: white;
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border: none;
+    position: relative;
+    padding: 10px 5px;
+}
+
+
+/**/
+
+
 .buttoncontainer {
+    
+    font-family: 'Raleway';
+    font-size: 30px;
+    font-weight: bold;
     display: flex;
     flex-direction: column;
-
-    gap: 20px;
+    gap: 15px;
+    border: 3px solid rgba(247, 220, 220, 0.564);
+    margin: 10px;
+    padding: 10px;
+    min-width: 200px;
+    max-width: 200px;
+    
+    
+    border-radius: 6px;
 }
 
-#container {
+.buttoncontainer button {
+    width: 180px;
+    height: 60px;
+}
+
+.middle {
     display: flex;
-    flex-direction: column;
+    gap: 50px;
 }
+
+.header {
+    color: #6fba82;
+    font-size: 100px;
+    background-color:  #6fba82;
+}
+
+
+
+
+#box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 150px;
+  color: white;
+  font-family: 'Raleway';
+  font-size: 8rem;
+}
+.gradient-border {
+  --borderWidth: 6px;
+  background: #1D1F20;
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+.gradient-border:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+#colorpicker {
+    display: flex;
+   width:150px;
+   height:40px;
+    
+}
+
 

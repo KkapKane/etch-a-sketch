@@ -10,32 +10,36 @@
 </head>
     
 <body ondragstart="return false;" ondrop="return false;">
-   
-    <div class="header">header</div>
+    <div class="gradient-border" id="box">Etch-a-sketch</div>
+    
 
 
 <div class="middle">
     
     
     <div id="container">
+        
     
     <div class="buttoncontainer">
         
+        <div class="grid-slider">
         <input type="range" min="1" max="100" value="16" class="slider" id="range">
-        Value: <span id="value"></span>
-        Value: <span id="outputVar"></span>
-        <label for="colorpicker">Color Picker:</label>
+        <span id="value"></span>
+        </div>
+        
+        <div class="colorpicker">
+        <label for="colorpicker">Color</label>
         <input type="color" id="colorpicker" value="#000000">
-        <div class="mode">mode: not coloring</div>
+        </div>
     
     
     
-        <button id="btn1">Grid size</button>
-        <button id="btn2">Clear</button>
-        <button id="btn3" onclick="changecolor('black')">black</button>
+        
+        <button id="btn2"> </button>
+       
         <button id="btn4" onclick ="changecolor('random')">random</button>
-        <button id="btn5" onclick ="changecolor('colorpicker')">Set color to color picker</button> 
-        <button id="btn5" onclick ="changecolor('white')">Eraser</button> 
+        
+        <button id="btn5" onclick ="changecolor('white')"></button> 
     </div>
 
 

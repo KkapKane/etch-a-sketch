@@ -1,13 +1,14 @@
 const container = document.querySelector('#container');
-const body = document.querySelector('body')
+const body = document.querySelector('.middle')
 const content = document.createElement('div');
 content.classList.add('content');
-const button3 = document.querySelector('#btn3');
+const contentcontainer = document.querySelector('content')
 let click = false;
 let color = 'black'
 var customcolor = document.getElementById('colorpicker');
 customcolor.addEventListener('input', () => {
     color = customcolor.value
+    
 })
 
 // Slider listener
@@ -74,12 +75,6 @@ for (let i = 1; i < column; i++) {
 }
 makerow(slider.value)
 //button to set gridbox size
-const buttons = document.querySelector('#btn1');
-
-buttons.addEventListener('click', () => {
-   removeAllChildNodes(content);
-    promptme();
-  });
 
 
 
@@ -143,9 +138,11 @@ function colorSquare (){
     }
     else if((color == "colorpicker")){
     var colorchose = document.getElementById("colorpicker").value;
-    this.style.backgroundColor = colorchose;}
+    this.style.backgroundColor = colorchose;
+}
     else
     this.style.backgroundColor = color;
+    
 }
 }
 
@@ -155,7 +152,7 @@ function changecolor (choice){
 // mouse up sets click to false
 document.querySelector('body').addEventListener('mouseup', (e) =>{
     click = false;
-    document.querySelector('.mode').textContent = "mode: not coloring"
+    document.querySelector('.mode').textContent = color
 });
 document.querySelector('body').addEventListener('mousedown', (e) =>{
   if (e.target.tagname != "BUTTON"){
@@ -171,5 +168,4 @@ document.querySelector('body').addEventListener('mousedown', (e) =>{
 
 
 });
-
 
